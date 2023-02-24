@@ -23,6 +23,8 @@ const resetCanvas = () => {
 };
 
 // opencv.js processes
+const PROCESSING_IMAGE_SIZE = 2000;
+
 function onOpenCvReady() {
   document.getElementById("status").innerHTML = "OpenCV.js is ready.";
 }
@@ -87,7 +89,10 @@ function toAttentionFig(src, inputMask) {
 function attentionEndToEnd() {
   (async () => {
     const src = cv.imread("imageSrc");
-    const dsize = new cv.Size(500, Math.floor((500 * src.rows) / src.cols));
+    const dsize = new cv.Size(
+      PROCESSING_IMAGE_SIZE,
+      Math.floor((PROCESSING_IMAGE_SIZE * src.rows) / src.cols)
+    );
     let resized = new cv.Mat();
     cv.resize(src, resized, dsize);
     src.delete();
@@ -97,10 +102,13 @@ function attentionEndToEnd() {
     });
     await repaint();
     const mask = cv.imread("dummy-input-mask");
-    canvas.setBackgroundColor("transparent");
-    const dst = toAttentionFig(resized, mask);
-    resized.delete();
+    let resizedMask = new cv.Mat();
+    cv.resize(mask, resizedMask, dsize);
     mask.delete();
+    canvas.setBackgroundColor("transparent");
+    const dst = toAttentionFig(resized, resizedMask);
+    resized.delete();
+    resizedMask.delete();
     cv.imshow("imageDst", dst);
     dst.delete();
   })();
