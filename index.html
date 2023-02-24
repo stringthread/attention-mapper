@@ -26,11 +26,13 @@
         <img id="imageSrc" alt="No Image" />
         <canvas id="canvas"></canvas>
       </div>
-      <input type="file" id="fileInput" name="file" />
       <canvas id="imageDst"></canvas>
+    </div>
+    <div id="controls">
+      <input type="file" id="fileInput" name="file" />
       <button onclick="resetCanvas();">Reset marks</button>
       <button onclick="attentionEndToEnd();">Generate</button>
     </div>
-    <img id="dummy-input-mask" />
+    <div id="dummy-mask-wrap"><img id="dummy-input-mask" /></div>
   </body>
 </html>

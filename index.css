@@ -1,5 +1,9 @@
 #wrap {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
 }
 #input-wrap {
   width: 90vw;
@@ -14,8 +18,13 @@
   top: 0;
 }
 #imageDst {
-  width: 500px;
-  position: absolute;
-  left: 50vw;
-  top: 0;
+  width: 90vw;
+  max-width: 500px;
+}
+#dummy-mask-wrap {
+  height: 0;
+  overflow: hidden;
+}
+#dummy-input-mask {
+  visibility: hidden;
 }
