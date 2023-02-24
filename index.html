@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>imgProcessTest</title>
+    <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"
+      integrity="sha512-CeIsOAsgJnmevfCi2C7Zsyy6bQKi43utIjdA87Q0ZY84oDqnI0uwfM9+bKiIkI75lUeI00WG/+uJzOmuHlesMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="index.js"></script>
+    <script
+      async
+      onload="onOpenCvReady();"
+      src="https://docs.opencv.org/3.4.1/opencv.js"
+    ></script>
+  </head>
+  <body>
+    <p id="status">OpenCV.js is loading...</p>
+    <div id="wrap">
+      <div id="input-wrap">
+        <img id="imageSrc" alt="No Image" />
+        <canvas id="canvas"></canvas>
+      </div>
+      <input type="file" id="fileInput" name="file" />
+      <canvas id="imageDst"></canvas>
+      <button onclick="resetCanvas();">Reset marks</button>
+      <button onclick="attentionEndToEnd();">Generate</button>
+    </div>
+    <img id="dummy-input-mask" />
+  </body>
+</html>

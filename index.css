@@ -1,0 +1,20 @@
+#wrap {
+  position: relative;
+}
+#input-wrap {
+  width: 500px;
+  position: relative;
+}
+#imageSrc,
+#canvas {
+  width: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#imageDst {
+  width: 500px;
+  position: absolute;
+  left: 50vw;
+  top: 0;
+}
