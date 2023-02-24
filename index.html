@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>imgProcessTest</title>
     <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/intro.js/minified/introjs.min.css"
+    />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"
       integrity="sha512-CeIsOAsgJnmevfCi2C7Zsyy6bQKi43utIjdA87Q0ZY84oDqnI0uwfM9+bKiIkI75lUeI00WG/+uJzOmuHlesMA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
     <script src="index.js"></script>
     <script
       async
@@ -31,7 +36,9 @@
     <div id="controls">
       <input type="file" id="fileInput" name="file" />
       <button onclick="resetCanvas();">Reset marks</button>
-      <button onclick="attentionEndToEnd();">Generate</button>
+      <button id="generateButton" onclick="attentionEndToEnd();">
+        Generate
+      </button>
     </div>
     <div id="dummy-mask-wrap"><img id="dummy-input-mask" /></div>
   </body>

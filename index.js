@@ -135,4 +135,25 @@ window.onload = () => {
     },
     false
   );
+  introJs()
+    .setOptions({
+      steps: [
+        {
+          intro: "このアプリでは注目した場所を強調する画像加工ができます",
+        },
+        {
+          intro: "まず加工する画像をアップロードしましょう",
+          element: inputElement,
+        },
+        {
+          intro: "強調したい場所を白く塗りましょう",
+          element: canvasElement,
+        },
+        {
+          intro: "Generateボタンで画像を生成",
+          element: document.getElementById("generateButton"),
+        },
+      ],
+    })
+    .start();
 };
