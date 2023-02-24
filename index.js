@@ -126,6 +126,7 @@ window.onload = () => {
     "change",
     async (e) => {
       imgElement.src = URL.createObjectURL(e.target.files[0]);
+      await setTimeout(() => {}, 500); // HACK: 画像読み込みのタイミング調整
       await repaint();
       canvas.setHeight(imgElement.clientHeight);
       canvas.setWidth(imgElement.clientWidth);
